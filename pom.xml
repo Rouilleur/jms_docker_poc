@@ -24,6 +24,7 @@
     <modules>
         <module>broker</module>
         <module>emitter</module>
+        <module>receiver</module>
     </modules>
 
 </project>
