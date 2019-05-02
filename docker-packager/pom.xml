@@ -58,7 +58,8 @@
                         <image>
                             <name>jms_docker_poc-broker</name>
                             <build>
-                                <contextDir>${project.build.directory}</contextDir>
+				    <contextDir>${project.build.directory}/dependency</contextDir>
+				    <dockerFile>${basedir}/src/main/docker/Dockerfile</dockerFile>
                             </build>
                         </image>
                     </images>
