@@ -1,6 +1,7 @@
 package com.rouilleur.jmsdockerpoc.emitter.config;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.core.JmsTemplate;
@@ -23,9 +24,20 @@ public class JmsConfig {
     }
 
     @Bean
-    public JmsTemplate jmsTemplate(){
+    @Qualifier("queue")
+    public JmsTemplate jmsTemplateQueue(){
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
+        return template;
+    }
+
+
+    @Bean
+    @Qualifier("topic")
+    public JmsTemplate jmsTemplateTopic(){
+        JmsTemplate template = new JmsTemplate();
+        template.setConnectionFactory(connectionFactory());
+        template.setPubSubDomain(true);
         return template;
     }
 

@@ -1,9 +1,14 @@
 package com.rouilleur.jmsdockerpoc.receiver.config;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
+import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jms.config.DefaultJmsListenerContainerFactory;
+import org.springframework.jms.config.JmsListenerContainerFactory;
 import org.springframework.jms.core.JmsTemplate;
+
+import javax.jms.ConnectionFactory;
 
 @Configuration
 public class JmsConfig {
@@ -27,6 +32,28 @@ public class JmsConfig {
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
         return template;
+    }
+
+
+    @Bean
+    public JmsListenerContainerFactory<?> myQueueFactory(ConnectionFactory connectionFactory,
+                                                         DefaultJmsListenerContainerFactoryConfigurer configurer) {
+        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+
+
+        configurer.configure(factory, connectionFactory);
+
+
+        return factory;
+    }
+
+    @Bean
+    public JmsListenerContainerFactory<?> myTopicFactory(ConnectionFactory connectionFactory,
+                                                         DefaultJmsListenerContainerFactoryConfigurer configurer) {
+        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
+        configurer.configure(factory, connectionFactory);
+        factory.setPubSubDomain(true);
+        return factory;
     }
 
 }
