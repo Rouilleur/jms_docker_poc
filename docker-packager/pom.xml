@@ -58,8 +58,22 @@
                         <image>
                             <name>jms_docker_poc-broker</name>
                             <build>
-				    <contextDir>${project.build.directory}/dependency</contextDir>
-				    <dockerFile>${basedir}/src/main/docker/Dockerfile</dockerFile>
+                                <contextDir>${project.build.directory}/dependency</contextDir>
+                                <dockerFile>${basedir}/src/main/docker/broker/Dockerfile</dockerFile>
+                            </build>
+                        </image>
+                        <image>
+                            <name>jms_docker_poc-emitter</name>
+                            <build>
+                                <contextDir>${project.build.directory}/dependency</contextDir>
+                                <dockerFile>${basedir}/src/main/docker/emitter/Dockerfile</dockerFile>
+                            </build>
+                        </image>
+                        <image>
+                            <name>jms_docker_poc-receiver</name>
+                            <build>
+                                <contextDir>${project.build.directory}/dependency</contextDir>
+                                <dockerFile>${basedir}/src/main/docker/receiver/Dockerfile</dockerFile>
                             </build>
                         </image>
                     </images>
