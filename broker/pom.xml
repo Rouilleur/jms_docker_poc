@@ -31,8 +31,8 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-kahadb-store</artifactId>
         </dependency>
-
     </dependencies>
+
 
     <build>
         <plugins>

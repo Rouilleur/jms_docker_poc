@@ -25,6 +25,27 @@
         <module>broker</module>
         <module>emitter</module>
         <module>receiver</module>
+        <module>docker-packager</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.rouilleur</groupId>
+                <artifactId>broker</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rouilleur</groupId>
+                <artifactId>emitter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.rouilleur</groupId>
+                <artifactId>receiver</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

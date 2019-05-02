@@ -10,7 +10,6 @@ import org.springframework.jms.annotation.EnableJms;
 public class BrokerApplication {
 
 
-
     public static void main(String[] args) {
         SpringApplication.run(BrokerApplication.class, args);
 

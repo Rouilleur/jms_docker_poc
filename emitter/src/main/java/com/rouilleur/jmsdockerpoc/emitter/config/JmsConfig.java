@@ -31,7 +31,7 @@ public class JmsConfig {
 
     @Bean
     @Qualifier("queue")
-    public JmsTemplate jmsTemplateQueue(){
+    public JmsTemplate jmsTemplateQueue() {
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
         return template;
@@ -40,7 +40,7 @@ public class JmsConfig {
 
     @Bean
     @Qualifier("topic")
-    public JmsTemplate jmsTemplateTopic(){
+    public JmsTemplate jmsTemplateTopic() {
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
         template.setPubSubDomain(true);

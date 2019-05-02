@@ -41,7 +41,7 @@ public class JmsBrokerConfig {
     }
 
     @Bean
-    public JmsTemplate jmsTemplate(){
+    public JmsTemplate jmsTemplate() {
         JmsTemplate template = new JmsTemplate();
         template.setConnectionFactory(connectionFactory());
         return template;
@@ -50,7 +50,7 @@ public class JmsBrokerConfig {
 
     @Bean
     public JmsListenerContainerFactory<?> myQueueFactory(ConnectionFactory connectionFactory,
-                                                    DefaultJmsListenerContainerFactoryConfigurer configurer) {
+                                                         DefaultJmsListenerContainerFactoryConfigurer configurer) {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
 
 
@@ -68,7 +68,6 @@ public class JmsBrokerConfig {
         factory.setPubSubDomain(true);
         return factory;
     }
-
 
 
 }
