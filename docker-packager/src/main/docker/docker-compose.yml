@@ -1,0 +1,45 @@
+version: "3"
+services:
+  broker:
+    # replace username/repo:tag with your name and image details
+    image: rouilleur/jms_docker_poc-broker
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 200M
+    networks:
+      jmsnet:
+        aliases:
+          - brokerhost
+  receiver:
+    # replace username/repo:tag with your name and image details
+    image: rouilleur/jms_docker_poc-receiver
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 200M
+    networks:
+      - jmsnet
+  emitter:
+    # replace username/repo:tag with your name and image details
+    image: rouilleur/jms_docker_poc-emitter
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 200M
+    networks:
+      - jmsnet
+networks:
+  jmsnet:
