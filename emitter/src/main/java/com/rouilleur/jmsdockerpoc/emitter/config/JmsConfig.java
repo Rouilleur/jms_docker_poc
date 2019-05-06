@@ -10,13 +10,13 @@ import org.springframework.jms.core.JmsTemplate;
 @Configuration
 public class JmsConfig {
 
-    @Value("spring.activemq.broker-url")
+    @Value("${spring.activemq.broker-url}")
     String BROKER_URL = "tcp://localhost:61616";
 
-    @Value("spring.activemq.user")
+    @Value("${spring.activemq.user}")
     String BROKER_USERNAME = "admin";
 
-    @Value("spring.activemq.password")
+    @Value("${spring.activemq.password}")
     String BROKER_PASSWORD = "admin";
 
 
