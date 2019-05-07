@@ -4,5 +4,5 @@ WORKDIR /home/
 
 COPY emitter-*.jar .
 
-ENTRYPOINT java -jar /home/emitter*.jar
+ENTRYPOINT ["java", "-jar /home/emitter*.jar"]
 

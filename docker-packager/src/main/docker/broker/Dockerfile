@@ -4,5 +4,5 @@ WORKDIR /home/
 
 COPY broker-*.jar .
 
-ENTRYPOINT java -jar /home/broker*.jar
+ENTRYPOINT ["java", "-jar /home/broker*.jar"]
 
