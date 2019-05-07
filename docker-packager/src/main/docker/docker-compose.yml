@@ -39,6 +39,8 @@ services:
         limits:
           cpus: "0.3"
           memory: 200M
+    ports:
+      - 8081:8080
     networks:
       - jmsnet
 networks:
