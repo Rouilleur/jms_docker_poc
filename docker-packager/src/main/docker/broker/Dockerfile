@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 
 WORKDIR /home/
 
-COPY broker-*.jar .
+COPY broker.jar .
 
-ENTRYPOINT ["java", "-jar", "/home/broker*.jar"]
+ENTRYPOINT ["java", "-jar", "/home/broker.jar"]
 

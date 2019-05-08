@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 
 WORKDIR /home/
 
-COPY receiver-*.jar .
+COPY receiver.jar .
 
-ENTRYPOINT ["java", "-jar", "/home/receiver*.jar"]
+ENTRYPOINT ["java", "-jar", "/home/receiver.jar"]
 

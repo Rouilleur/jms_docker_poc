@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 
 WORKDIR /home/
 
-COPY emitter-*.jar .
+COPY emitter.jar .
 
-ENTRYPOINT ["java", "-jar", "/home/emitter*.jar"]
+ENTRYPOINT ["java", "-jar", "/home/emitter.jar"]
 
