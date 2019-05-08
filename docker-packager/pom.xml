@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <docker.repository>rouilleur</docker.repository>
     </properties>
 
 
@@ -56,21 +57,21 @@
                 <configuration>
                     <images>
                         <image>
-                            <name>jms_docker_poc-broker</name>
+                            <name>${docker.repository}/jms_docker_poc-broker</name>
                             <build>
                                 <contextDir>${project.build.directory}/dependency</contextDir>
                                 <dockerFile>${basedir}/src/main/docker/broker/Dockerfile</dockerFile>
                             </build>
                         </image>
                         <image>
-                            <name>jms_docker_poc-emitter</name>
+                            <name>${docker.repository}/jms_docker_poc-emitter</name>
                             <build>
                                 <contextDir>${project.build.directory}/dependency</contextDir>
                                 <dockerFile>${basedir}/src/main/docker/emitter/Dockerfile</dockerFile>
                             </build>
                         </image>
                         <image>
-                            <name>jms_docker_poc-receiver</name>
+                            <name>${docker.repository}/jms_docker_poc-receiver</name>
                             <build>
                                 <contextDir>${project.build.directory}/dependency</contextDir>
                                 <dockerFile>${basedir}/src/main/docker/receiver/Dockerfile</dockerFile>
