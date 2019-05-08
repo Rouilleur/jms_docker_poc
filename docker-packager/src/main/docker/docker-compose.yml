@@ -11,6 +11,8 @@ services:
         limits:
           cpus: "0.3"
           memory: 200M
+    ports:
+      - 8091:8090
     networks:
       jmsnet:
         aliases:

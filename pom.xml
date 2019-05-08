@@ -19,6 +19,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <hawtio.version>2.6.0</hawtio.version>
     </properties>
 
     <modules>
@@ -44,6 +45,11 @@
                 <groupId>com.rouilleur</groupId>
                 <artifactId>receiver</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.hawt</groupId>
+                <artifactId>hawtio-springboot</artifactId>
+                <version>${hawtio.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
